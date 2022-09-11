@@ -6,7 +6,7 @@ on:
       - production
     paths:
       - 'packages/container/**'
-      - '.github/workflows/**'
+      # - '.github/workflows/**'
 
 defaults:
   run:
