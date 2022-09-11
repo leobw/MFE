@@ -5,6 +5,8 @@ const packageJson = require('../package.json');
 
 const domain = process.env.PRODUCTION_DOMAIN;
 
+console.info({ domain: domain || 'PRODUCTION_DOMAIN NOT FOUND' });
+
 const prodConfig = {
 	mode: 'production',
 	output: {
@@ -15,7 +17,7 @@ const prodConfig = {
 		new ModuleFederationPlugin({
 			name: 'container',
 			remotes: {
-				marketing: `marketing@https://d1jdbadnm90qz1.cloudfront.net/marketing/latest/remoteEntry.js`
+				marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
 			},
 			shared: packageJson.dependencies
 		}),
