@@ -5,7 +5,7 @@ on:
     branchs:
       - production
     paths:
-      - 'packages/markerting/**'
+      - 'packages/marketing/**'
       # - '.github/workflows/**'
 
 defaults:
